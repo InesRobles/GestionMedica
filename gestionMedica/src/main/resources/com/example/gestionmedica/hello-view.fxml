@@ -11,8 +11,8 @@
     </padding>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="269.0">
             <children>
-                <PasswordField layoutX="60.0" layoutY="90.0" text="Contraseña" />
-                <TextField layoutX="60.0" layoutY="49.0" text="Usuario" />
+                <PasswordField fx:id="passwordField" layoutX="60.0" layoutY="90.0" promptText="Contraseña" />
+                <TextField fx:id="usuarioField" layoutX="60.0" layoutY="49.0" promptText="Usuario" />
                 <Button layoutX="73.0" layoutY="153.0" onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="124.0" text="Iniciar sesión" />
          <Label layoutX="109.0" layoutY="2.0" prefHeight="22.0" prefWidth="51.0" text="Login" textAlignment="CENTER">
             <font>

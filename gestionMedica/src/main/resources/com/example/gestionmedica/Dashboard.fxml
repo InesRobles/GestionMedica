@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.example.gestionmedica.controllers.DashboardController">
+    
+    <!-- Top: Barra de navegación -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #2196F3; -fx-padding: 15;">
+            <Label text="Sistema de Gestión Médica" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="labelUsuario" text="Usuario: Admin" textFill="WHITE">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Label>
+            <Button text="Cerrar Sesión" onAction="#cerrarSesion" style="-fx-background-color: #f44336; -fx-text-fill: white;" />
+        </HBox>
+    </top>
+    
+    <!-- Center: Contenido principal -->
+    <center>
+        <VBox alignment="CENTER" spacing="30" style="-fx-padding: 50;">
+            <Label text="Dashboard Principal" textAlignment="CENTER">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+            
+            <!-- Botones de navegación -->
+            <HBox alignment="CENTER" spacing="20">
+                <VBox alignment="CENTER" spacing="10">
+                    <Button text="Gestión de Pacientes" onAction="#irAPacientes" 
+                            prefWidth="200" prefHeight="80" 
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14;">
+                    </Button>
+                    <Label text="Administrar pacientes" style="-fx-text-fill: gray;" />
+                </VBox>
+                
+                <VBox alignment="CENTER" spacing="10">
+                    <Button text="Gestión de Médicos" onAction="#irAMedicos" 
+                            prefWidth="200" prefHeight="80" 
+                            style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14;">
+                    </Button>
+                    <Label text="Administrar médicos" style="-fx-text-fill: gray;" />
+                </VBox>
+                
+                <VBox alignment="CENTER" spacing="10">
+                    <Button text="Gestión de Citas" onAction="#irACitas" 
+                            prefWidth="200" prefHeight="80" 
+                            style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-size: 14;">
+                    </Button>
+                    <Label text="Programar y ver citas" style="-fx-text-fill: gray;" />
+                </VBox>
+            </HBox>
+            
+            <!-- Información del sistema -->
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20; -fx-background-color: #f5f5f5; -fx-background-radius: 10;">
+                <Label text="Información del Sistema" style="-fx-font-weight: bold;" />
+                <Label fx:id="labelEstadoConexion" text="Estado: Conectado a Base de Datos" style="-fx-text-fill: green;" />
+                <Label text="Hospital MVP - Versión 1.0" style="-fx-text-fill: gray; -fx-font-size: 12;" />
+            </VBox>
+        </VBox>
+    </center>
+    
+</BorderPane>
