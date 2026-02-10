@@ -1,31 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
 
+<VBox alignment="CENTER"
+      prefHeight="260.0"
+      prefWidth="340.0"
+      spacing="18.0"
+      stylesheets="@/css/login.css"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.gestionmedica.controllers.HelloController">
 
-<?import java.net.URL?>
-<VBox alignment="CENTER" prefHeight="253.0" prefWidth="310.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestionmedica.HelloController">
-    <stylesheets>
-        <URL value="@/gestionMedica/src/main/resources/css/helloEstilos.css"/>
-    </stylesheets>
 
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
     </padding>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="269.0">
-            <children>
-                <PasswordField layoutX="60.0" layoutY="90.0" text="Contraseña" />
-                <TextField layoutX="60.0" layoutY="49.0" text="Usuario" />
-                <Button layoutX="73.0" layoutY="153.0" onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="124.0" text="Iniciar sesión" />
-         <Label layoutX="109.0" layoutY="2.0" prefHeight="22.0" prefWidth="51.0" text="Login" textAlignment="CENTER">
-            <font>
-               <Font name="Bookshelf Symbol 7" size="20.0" />
-            </font>
-         </Label>
-            </children>
-        </AnchorPane>
+
+
+    <AnchorPane prefHeight="220.0" prefWidth="300.0">
+        <children>
+
+            <Label layoutX="125.0" layoutY="10.0" text="Login">
+                <font><Font size="22.0"/></font>
+            </Label>
+
+            <TextField fx:id="txtUsuario"
+                       layoutX="40.0" layoutY="60.0"
+                       prefWidth="220.0"
+                       promptText="Usuario"/>
+
+            <PasswordField fx:id="txtPassword"
+                           layoutX="40.0" layoutY="105.0"
+                           prefWidth="220.0"
+                           promptText="Contraseña"/>
+
+            <Button layoutX="90.0" layoutY="155.0"
+                    prefWidth="140.0"
+                    text="Iniciar sesión"
+                    onAction="#onHelloButtonClick"/>
+
+            <Label fx:id="lblMensaje"
+                   layoutX="40.0" layoutY="195.0"
+                   prefWidth="220.0"
+                   text=""/>
+
+        </children>
+    </AnchorPane>
 
 </VBox>
