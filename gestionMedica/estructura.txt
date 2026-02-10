@@ -1,0 +1,31 @@
+gestion-medica-hackathon/
+├── pom.xml                          ← Dependencias Maven (JavaFX, MySQL)
+├── README.md                        ← Instrucciones del proyecto
+├── .gitignore                       ← Archivos a ignorar (target/, .idea/)
+├── src/
+│   └── main/
+│       ├── java/                    ← TODO EL CÓDIGO JAVA
+│       │   └── gestion/             ← Tu paquete base (cambia el nombre)
+│       │       ├── MainApp.java     ← Punto de entrada (main)
+│       │       ├── models/          ← CLASES DE DATOS (POJOs)
+│       │       │   ├── Paciente.java
+│       │       │   ├── Medico.java
+│       │       │   └── Cita.java
+│       │       ├── dao/             ← CONSULTAS SQL (JDBC)
+│       │       │   ├── PacienteDAO.java
+│       │       │   ├── MedicoDAO.java
+│       │       │   └── CitaDAO.java
+│       │       ├── controllers/     ← LÓGICA DE PANTALLAS
+│       │       │   ├── DashboardController.java
+│       │       │   ├── PacientesController.java
+│       │       │   └── CitasController.java
+│       │       └── utils/           ← HERRAMIENTAS COMUNES
+│       │           └── DatabaseConnection.java
+│       └── resources/               ← ARCHIVOS NO-JAVA
+│           ├── fxml/                ← DISEÑO DE PANTALLAS
+│           │   ├── Dashboard.fxml
+│           │   ├── Pacientes.fxml
+│           │   └── Citas.fxml
+│           └── css/                 ← ESTILOS
+│               └── styles.css
+└── target/                          ← GENERADO POR MAVEN (IGNORAR)
