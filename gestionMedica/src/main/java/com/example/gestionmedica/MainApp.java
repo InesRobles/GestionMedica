@@ -1,12 +1,13 @@
 package com.example.gestionmedica;
 
+import java.io.IOException;
+
 import com.example.gestionmedica.utils.DatabaseConnection;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 /**
  * Clase principal de la aplicación de Gestión Médica
@@ -25,7 +26,7 @@ public class MainApp extends Application {
         
         // Cargar la vista principal
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 800, 600);
+        Scene scene = new Scene(fxmlLoader.load(), 400, 350);
         
         // Configurar la ventana principal
         stage.setTitle("Sistema de Gestión Médica - Hospital MVP");

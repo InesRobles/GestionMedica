@@ -67,7 +67,7 @@ public class DashboardController {
     private void cerrarSesion() {
         System.out.println("Cerrando sesión...");
         try {
-            MainApp.cambiarEscena("hello-view.fxml", "Login - Gestión Médica", 320, 280);
+            MainApp.cambiarEscena("hello-view.fxml", "Login - Gestión Médica", 400, 350);
         } catch (Exception e) {
             System.err.println("✗ Error al volver al login: " + e.getMessage());
         }

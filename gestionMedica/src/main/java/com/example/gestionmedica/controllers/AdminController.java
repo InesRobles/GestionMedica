@@ -1,4 +1,4 @@
-package com.example.gestionmedica;
+package com.example.gestionmedica.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

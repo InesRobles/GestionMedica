@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.gestionmedica.controllers.CitasController">
+
+    <!-- Top: Barra de navegación -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: #FF9800; -fx-padding: 15;">
+            <Button text="← Volver" onAction="#volverAlDashboard"
+                    style="-fx-background-color: white; -fx-text-fill: #FF9800; -fx-font-weight: bold;" />
+            <Label text="Gestión de Citas" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+        </HBox>
+    </top>
+
+    <!-- Center: Tabla y formulario -->
+    <center>
+        <VBox spacing="15" style="-fx-padding: 20;">
+            <!-- Tabla de citas -->
+            <TableView fx:id="tablaCitas" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50" />
+                    <TableColumn fx:id="colPaciente" text="Paciente" prefWidth="150" />
+                    <TableColumn fx:id="colMedico" text="Médico" prefWidth="150" />
+                    <TableColumn fx:id="colFecha" text="Fecha" prefWidth="120" />
+                    <TableColumn fx:id="colHora" text="Hora" prefWidth="80" />
+                    <TableColumn fx:id="colMotivo" text="Motivo" prefWidth="180" />
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="100" />
+                </columns>
+            </TableView>
+
+            <!-- Formulario -->
+            <HBox spacing="20" alignment="CENTER">
+                <VBox spacing="8">
+                    <Label text="Paciente:" />
+                    <TextField fx:id="txtPaciente" promptText="ID Paciente" prefWidth="120" />
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Médico:" />
+                    <TextField fx:id="txtMedico" promptText="ID Médico" prefWidth="120" />
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Fecha:" />
+                    <DatePicker fx:id="dpFecha" prefWidth="150" />
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Hora:" />
+                    <TextField fx:id="txtHora" promptText="HH:MM" prefWidth="100" />
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Motivo:" />
+                    <TextField fx:id="txtMotivo" promptText="Motivo de la cita" prefWidth="200" />
+                </VBox>
+            </HBox>
+
+            <!-- Botones de acción -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Agregar" onAction="#agregarCita"
+                        style="-fx-background-color: #4CAF50; -fx-text-fill: white;" prefWidth="100" />
+                <Button text="Actualizar" onAction="#actualizarCita"
+                        style="-fx-background-color: #2196F3; -fx-text-fill: white;" prefWidth="100" />
+                <Button text="Eliminar" onAction="#eliminarCita"
+                        style="-fx-background-color: #f44336; -fx-text-fill: white;" prefWidth="100" />
+                <Button text="Limpiar" onAction="#limpiarCampos"
+                        style="-fx-background-color: #9E9E9E; -fx-text-fill: white;" prefWidth="100" />
+            </HBox>
+        </VBox>
+    </center>
+
+</BorderPane>

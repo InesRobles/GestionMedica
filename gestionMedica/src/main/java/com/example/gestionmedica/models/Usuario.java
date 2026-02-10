@@ -21,7 +21,7 @@ public class Usuario {
 
     // Constructor completo
     public Usuario(int idUsuario, String username, String password, String nombreCompleto, 
-                   String rol, boolean activo, LocalDateTime fechaCreacion) {
+                String rol, boolean activo, LocalDateTime fechaCreacion) {
         this.idUsuario = idUsuario;
         this.username = username;
         this.password = password;

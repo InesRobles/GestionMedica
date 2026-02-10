@@ -1,6 +1,7 @@
 module com.example.gestionmedica {
     requires javafx.controls;
     requires javafx.fxml;
+    requires transitive javafx.graphics;
     requires transitive java.sql;
 
     opens com.example.gestionmedica to javafx.fxml;

@@ -1,16 +1,14 @@
 package com.example.gestionmedica;
 
-import com.example.gestionmedica.dao.PacienteDAO;
-import com.example.gestionmedica.dao.MedicoDAO;
-import com.example.gestionmedica.dao.CitaDAO;
-import com.example.gestionmedica.models.Paciente;
-import com.example.gestionmedica.models.Medico;
-import com.example.gestionmedica.models.Cita;
-import com.example.gestionmedica.utils.DatabaseConnection;
-
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
+
+import com.example.gestionmedica.dao.CitaDAO;
+import com.example.gestionmedica.dao.MedicoDAO;
+import com.example.gestionmedica.dao.PacienteDAO;
+import com.example.gestionmedica.models.Cita;
+import com.example.gestionmedica.models.Medico;
+import com.example.gestionmedica.models.Paciente;
+import com.example.gestionmedica.utils.DatabaseConnection;
 
 /**
  * Clase de prueba para verificar que los DAOs funcionan correctamente
