@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane prefHeight="287.0" prefWidth="388.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+        <tabs>
+          <Tab text="Pacientes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="184.0" prefWidth="270.0">
+                     <children>
+                        <TabPane prefHeight="200.0" prefWidth="270.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Crear">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="313.0">
+                                       <children>
+                                          <TextField layoutX="14.0" layoutY="60.0" text="Apellidos" />
+                                          <TextField layoutX="15.0" layoutY="25.0" text="Nombre" />
+                                    <TextField layoutX="15.0" layoutY="100.0" text="DNI" />
+                                    <TextField layoutX="15.0" layoutY="138.0" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Ver">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
