@@ -1,0 +1,109 @@
+-- =========================================================
+-- BASE DE DATOS SIMPLE: Sistema de Gestión Médica (MVP)
+-- Tablas: pacientes, medicos, citas
+-- Pensado para JavaFX + JDBC en 1º DAM
+-- =========================================================
+
+DROP DATABASE IF EXISTS hospital_mvp;
+CREATE DATABASE hospital_mvp
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE hospital_mvp;
+
+-- =========================
+-- TABLA: usuarios (para login)
+-- =========================
+CREATE TABLE usuarios (
+    id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    nombre_completo VARCHAR(200),
+    rol ENUM('admin', 'medico', 'recepcionista') DEFAULT 'recepcionista',
+    activo BOOLEAN DEFAULT TRUE,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- =========================
+-- TABLA: medicos (simple)
+-- =========================
+CREATE TABLE medicos (
+    id_medico INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    especialidad VARCHAR(100) NOT NULL
+);
+
+-- =========================
+-- TABLA: pacientes
+-- =========================
+CREATE TABLE pacientes (
+    id_paciente INT PRIMARY KEY AUTO_INCREMENT,
+    dni VARCHAR(9) UNIQUE NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100) NOT NULL,
+    fecha_nacimiento DATE,
+    telefono VARCHAR(15),
+    email VARCHAR(100),
+    direccion VARCHAR(200)
+);
+
+-- =========================
+-- TABLA: citas
+-- =========================
+CREATE TABLE citas (
+    id_cita INT PRIMARY KEY AUTO_INCREMENT,
+    id_paciente INT NOT NULL,
+    id_medico INT NOT NULL,
+    fecha_cita DATE NOT NULL,
+    hora_cita TIME NOT NULL,
+    motivo VARCHAR(255),
+    estado ENUM('programada','confirmada','completada','cancelada')
+           DEFAULT 'programada',
+
+    CONSTRAINT fk_cita_paciente
+      FOREIGN KEY (id_paciente) REFERENCES pacientes(id_paciente)
+      ON DELETE RESTRICT,
+
+    CONSTRAINT fk_cita_medico
+      FOREIGN KEY (id_medico) REFERENCES medicos(id_medico)
+      ON DELETE RESTRICT,
+
+    -- Un médico no puede tener dos citas a la misma hora
+    CONSTRAINT uq_medico_fecha_hora
+      UNIQUE (id_medico, fecha_cita, hora_cita)
+);
+
+-- =========================
+-- DATOS DE PRUEBA
+-- =========================
+
+-- Usuario administrador por defecto
+-- Usuario: admin   Contraseña: admin123
+INSERT INTO usuarios (username, password, nombre_completo, rol) VALUES
+('admin', 'admin123', 'Administrador del Sistema', 'admin');
+
+-- Usuario recepcionista de prueba
+-- Usuario: recepcion   Contraseña: recep123
+INSERT INTO usuarios (username, password, nombre_completo, rol) VALUES
+('recepcion', 'recep123', 'María Recepción', 'recepcionista');
+
+-- Médicos para el combo de la UI
+INSERT INTO medicos (nombre, apellidos, especialidad) VALUES
+('Laura',  'García Martínez', 'Medicina General'),
+('Carlos', 'Rodríguez López', 'Cardiología'),
+('Ana',    'Fernández Ruiz',  'Pediatría');
+
+-- Pacientes de ejemplo
+INSERT INTO pacientes (dni, nombre, apellidos, fecha_nacimiento, telefono, email, direccion) VALUES
+('11111111A', 'Juan',   'Pérez Gómez',     '1985-05-15', '600111222', 'juan@example.com',  'Calle Mayor 1'),
+('22222222B', 'María',  'López Martín',    '1990-08-22', '600222333', 'maria@example.com', 'Avenida Sol 10'),
+('33333333C', 'Pedro',  'González Ruiz',   '1978-12-10', '600333444', 'pedro@example.com', 'Calle Luna 5');
+
+-- Citas de hoy y futuras
+INSERT INTO citas (id_paciente, id_medico, fecha_cita, hora_cita, motivo, estado) VALUES
+(1, 1, CURDATE(),      '09:00:00', 'Revisión general',      'confirmada'),
+(2, 2, CURDATE(),      '10:30:00', 'Dolor en el pecho',     'programada'),
+(3, 1, CURDATE(),      '12:00:00', 'Tensión alta',          'programada'),
+(1, 3, DATE_ADD(CURDATE(), INTERVAL 1 DAY), '16:00:00', 'Revisión pediatría para su hijo', 'programada');
+
