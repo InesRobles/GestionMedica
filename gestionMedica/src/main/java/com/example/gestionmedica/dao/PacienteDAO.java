@@ -4,7 +4,6 @@ import com.example.gestionmedica.models.Paciente;
 import com.example.gestionmedica.utils.DatabaseConnection;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
