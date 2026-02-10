@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane prefHeight="360.0" prefWidth="604.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+        <tabs>
+          <Tab text="Pacientes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="184.0" prefWidth="270.0">
+                     <children>
+                        <TabPane prefHeight="331.0" prefWidth="604.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Crear">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="313.0">
+                                       <children>
+                                          <TextField layoutX="117.0" layoutY="67.0" />
+                                          <TextField layoutX="117.0" layoutY="27.0" />
+                                    <TextField layoutX="117.0" layoutY="104.0" />
+                                    <TextField layoutX="117.0" layoutY="145.0" />
+                                    <Label layoutX="33.0" layoutY="30.0" text="Nombre:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="32.0" layoutY="67.0" text="Apellidos:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="33.0" layoutY="108.0" text="DNI:" />
+                                    <Label layoutX="31.0" layoutY="149.0" text="Teléfono:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="33.0" layoutY="184.0" text="Email:">
+                                       <font>
+                                          <Font size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField layoutX="118.0" layoutY="181.0" />
+                                    <Label layoutX="31.0" layoutY="229.0" text="Fecha naciemiento:" />
+                                    <DatePicker layoutX="146.0" layoutY="225.0" />
+                                    <Button layoutX="490.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="74.0" text="Crear" />
+                                    <Label layoutX="321.0" layoutY="31.0" text="Dirección:" />
+                                    <TextField layoutX="384.0" layoutY="27.0" />
+                                    <Button layoutX="396.0" layoutY="238.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="72.0" text="Cancelar" />
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Ver">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
